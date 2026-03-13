@@ -14,7 +14,7 @@ function Accueil() {
       <ListeTaches />
       <Logo />
       <LecteurAudio />
-      <Notification notifications={3} />
+      <Notification notifications={4} />
       <ListeCours />
       <Photos />
     </div>
