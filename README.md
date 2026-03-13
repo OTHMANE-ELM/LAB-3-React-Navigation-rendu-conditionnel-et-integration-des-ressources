@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# ⚛️ TP 3 – Navigation, Rendu Conditionnel & Ressources React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 🎯 Objectifs
 
-In the project directory, you can run:
+- Naviguer entre pages sans rechargement grâce à **React Router**
+- Afficher du contenu selon des conditions avec les opérateurs **ternaire** et **logique**
+- Générer des listes dynamiques avec **`map()`**
+- Intégrer des **images**, **fichiers audio** et **styles CSS** dans React
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📁 Structure du projet
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+├── Accueil.js       → Page d'accueil avec liste, logo et audio
+├── Apropos.js       → Page À propos
+├── App.css          → Styles globaux
+├── App.js           → Routeur principal + navigation
+├── Connexion.js     → Rendu conditionnel (connecté / déconnecté)
+├── index.js         → Point d'entrée + BrowserRouter
+├── LecteurAudio.js  → Lecteur audio natif
+├── ListeTaches.js   → Liste générée avec map()
+└── Logo.js          → Affichage d'une image importée
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Résumé des étapes
 
-### `npm run build`
+| Étape | Sujet | Ce qu'on fait |
+|-------|-------|---------------|
+| 1 | Initialisation | Créer le projet avec `create-react-app` et lancer le serveur local |
+| 2 | React Router | Installer `react-router-dom` pour la navigation SPA |
+| 3 | Navigation | Créer les pages Accueil & Apropos, déclarer les routes dans App.js |
+| 4 | `useState` | Afficher "Connecté" ou "Déconnecté" selon un état booléen |
+| 5 | `map()` | Générer une liste de tâches depuis un tableau de données |
+| 6 | Médias | Importer et afficher une image et un fichier audio |
+| 7 | CSS | Appliquer des styles via `className` (et non `class`) |
+| 8 | Exercices | 4 exercices pratiques pour consolider les acquis |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔑 Concepts essentiels
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Rendu conditionnel** — Afficher A ou B selon une condition, ou rien du tout si la condition est fausse. Deux syntaxes possibles : l'opérateur ternaire `? :` et l'opérateur logique `&&`.
 
-### `npm run eject`
+**Listes dynamiques** — La méthode `map()` parcourt un tableau et retourne un élément JSX pour chaque entrée. Chaque élément doit avoir une prop `key` unique.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Navigation SPA** — `<Link>` remplace les balises `<a>` classiques pour naviguer sans recharger la page. `<Routes>` et `<Route>` associent chaque URL à un composant.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Ressources** — Images et fichiers audio s'importent comme des modules JavaScript. En JSX, on utilise `className` à la place de `class` pour appliquer des styles CSS.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🧪 Exercices pratiques
 
-## Learn More
+| # | Composant | Objectif |
+|---|-----------|----------|
+| 1 | `Notifications.js` | Afficher un message uniquement si `notifications > 0` |
+| 2 | `ListeCourses.js` | Recevoir un tableau en props et l'afficher avec `map()` |
+| 3 | `Galerie.js` | Importer et afficher trois images depuis `src/` |
+| 4 | `Contact.js` | Nouvelle page, nouvelle route `/contact`, nouveau lien dans `<nav>` |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ⚠️ Pièges à éviter
 
-### Code Splitting
+- Écrire `class` au lieu de `className` → le style ne s'applique pas
+- Oublier la prop `key` dans un `map()` → avertissement React en console
+- Utiliser `<a href>` au lieu de `<Link to>` → rechargement complet de la page
+- Ne pas entourer `<App>` avec `<BrowserRouter>` dans `index.js` → les routes ne fonctionnent pas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🎬 Vidéo de démonstration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*TP réalisé dans le cadre du cours de développement web – React*
